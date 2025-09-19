@@ -15,7 +15,7 @@ public interface EmployeeMapper {
      * @param username
      * @return
      */
-    @Select("select * from employee where username = #{username}")
+    @Select("select * from employee where username = #{userName}")
     Employee getByUsername(String username);
 
     /**
@@ -35,4 +35,9 @@ public interface EmployeeMapper {
      * @return
      */
     Page<Employee> pageQuery(EmployeePageQueryDTO employeePageQueryDTO);
+
+    /**
+     * 根据主键动态生成
+     */
+    void update(Employee employee);
 }
